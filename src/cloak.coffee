@@ -181,34 +181,34 @@ esc_re = ( text ) -> text.replace /[.*+?^${}()|[\]\\]/g, "\\$&"
   return null
 
 
-############################################################################################################
-unless module.parent?
-  CLOAK           = @
-  DIFF            = require 'coffeenode-diff'
-  cloak           = CLOAK.new '()LTX'
-  cloak           = CLOAK.new '*+?^$'
-  help cloak
+# ############################################################################################################
+# unless module.parent?
+#   CLOAK           = @
+#   DIFF            = require 'coffeenode-diff'
+#   cloak           = CLOAK.new '()LTX'
+#   cloak           = CLOAK.new '*+?^$'
+#   help cloak
 
-  text = """
-    % & ! ;
-    some <<unlicensed>> (stuff here). \\𠄨 *20128+? &%!%A&123;
-    some more \\\\<<unlicensed\\\\>> (stuff here).
-    some \\<<licensed\\>> stuff here, and <\\<
-    The <<<\\LaTeX{}>>> Logo: `<<<\\LaTeX{}>>>`
-    """
-  # debug '©94643', @_mcp_backslash
-  # text = "% ; 2 3 \\ \\\\ \\𠄨"
-  # text = "0 1 2 3 4 5 6 7 8"
-  # text = "<<"
-  log '(1) -', CND.rainbow ( text )
-  cloaked_text = text
-  log '(2) -', CND.rainbow ( cloaked_text   = cloak.hide cloaked_text )
-  log '(3) -', CND.rainbow ( cloaked_text   = cloak.backslashed.hide    cloaked_text )
-  uncloaked_text = cloaked_text
-  log '(4) -', CND.rainbow ( uncloaked_text = cloak.backslashed.reveal  uncloaked_text )
-  log '(5) -', CND.rainbow ( uncloaked_text = cloak.reveal uncloaked_text )
-  log '(7) -', CND.rainbow '©79011', cloak.backslashed.remove           uncloaked_text
-  if uncloaked_text isnt text
-    log DIFF.colorize text, uncloaked_text
+#   text = """
+#     % & ! ;
+#     some <<unlicensed>> (stuff here). \\𠄨 *20128+? &%!%A&123;
+#     some more \\\\<<unlicensed\\\\>> (stuff here).
+#     some \\<<licensed\\>> stuff here, and <\\<
+#     The <<<\\LaTeX{}>>> Logo: `<<<\\LaTeX{}>>>`
+#     """
+#   # debug '©94643', @_mcp_backslash
+#   # text = "% ; 2 3 \\ \\\\ \\𠄨"
+#   # text = "0 1 2 3 4 5 6 7 8"
+#   # text = "<<"
+#   log '(1) -', CND.rainbow ( text )
+#   cloaked_text = text
+#   log '(2) -', CND.rainbow ( cloaked_text   = cloak.hide cloaked_text )
+#   log '(3) -', CND.rainbow ( cloaked_text   = cloak.backslashed.hide    cloaked_text )
+#   uncloaked_text = cloaked_text
+#   log '(4) -', CND.rainbow ( uncloaked_text = cloak.backslashed.reveal  uncloaked_text )
+#   log '(5) -', CND.rainbow ( uncloaked_text = cloak.reveal uncloaked_text )
+#   log '(7) -', CND.rainbow '©79011', cloak.backslashed.remove           uncloaked_text
+#   if uncloaked_text isnt text
+#     log DIFF.colorize text, uncloaked_text
 
-  log CND.steel '########################################################################'
+#   log CND.steel '########################################################################'
