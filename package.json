@@ -1,5 +1,5 @@
 {
-  "name": "ncr",
+  "name": "ncr-norangereader",
   "version": "2.1.1",
   "description": "A parser and converter for Unicode Characters, including (standard and extended) Numerical Character References",
   "main": "lib/main.js",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/loveencounterflow/ncr.git"
+    "url": "https://github.com/loveencounterflow/ncr-norangereader.git"
   },
   "bugs": {
-    "url": "https://github.com/loveencounterflow/ncr/issues"
+    "url": "https://github.com/loveencounterflow/ncr-norangereader/issues"
   },
-  "homepage": "https://github.com/loveencounterflow/ncr",
+  "homepage": "https://github.com/loveencounterflow/ncr-norangereader",
   "keywords": [
     "Unicode",
     "text",
